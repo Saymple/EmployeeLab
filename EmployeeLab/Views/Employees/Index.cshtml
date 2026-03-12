@@ -14,15 +14,10 @@
     </div>
 }
 
-@if (ViewBag.Filter != null)
-{
-    <h4 class="text-info">@ViewBag.Filter</h4>
-}
-
 <p>
-    <a asp-action="Create" class="btn btn-primary">Добавить сотрудника</a>
-    <a asp-action="Active" class="btn btn-success">Активные</a>
-    <a asp-action="Index" class="btn btn-secondary">Все сотрудники</a>
+    <a asp-controller="Employees" asp-action="Create" class="btn btn-primary">Добавить сотрудника</a>
+    <a asp-controller="Employees" asp-action="Active" class="btn btn-success">Активные</a>
+    <a asp-controller="Employees" asp-action="Index" class="btn btn-secondary">Все сотрудники</a>
 </p>
 
 <div class="row mb-3">
@@ -32,9 +27,9 @@
                 Фильтр по отделу
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" asp-action="ByDepartment" asp-route-department="IT">IT</a></li>
-                <li><a class="dropdown-item" asp-action="ByDepartment" asp-route-department="Управление">Управление</a></li>
-                <li><a class="dropdown-item" asp-action="ByDepartment" asp-route-department="HR">HR</a></li>
+                <li><a class="dropdown-item" asp-controller="Employees" asp-action="ByDepartment" asp-route-department="IT">IT</a></li>
+                <li><a class="dropdown-item" asp-controller="Employees" asp-action="ByDepartment" asp-route-department="Управление">Управление</a></li>
+                <li><a class="dropdown-item" asp-controller="Employees" asp-action="ByDepartment" asp-route-department="HR">HR</a></li>
             </ul>
         </div>
     </div>
@@ -74,9 +69,9 @@
                     }
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Детали</a>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Изменить</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Удалить</a>
+                    <a asp-controller="Employees" asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Детали</a>
+                    <a asp-controller="Employees" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Изменить</a>
+                    <a asp-controller="Employees" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Удалить</a>
                 </td>
             </tr>
         }

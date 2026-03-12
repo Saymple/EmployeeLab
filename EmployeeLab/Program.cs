@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Регистрация репозитория
-builder.Services.AddScoped<IEmployeeRepository, InMemoryEmployeeRepository>();
+builder.Services.AddSingleton<IEmployeeRepository, InMemoryEmployeeRepository>();
 
 var app = builder.Build();
 

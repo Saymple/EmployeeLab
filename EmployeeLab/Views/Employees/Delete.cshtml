@@ -52,8 +52,9 @@
     </div>
 </div>
 
-<form asp-action="Delete">
+<!-- ИСПРАВЛЕННАЯ ФОРМА -->
+<form asp-controller="Employees" asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
     <input type="submit" value="Удалить" class="btn btn-danger" />
-    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+    <a asp-controller="Employees" asp-action="Index" class="btn btn-secondary">Отмена</a>
 </form>
